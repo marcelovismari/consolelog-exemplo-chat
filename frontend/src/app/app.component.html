@@ -1,0 +1,33 @@
+@if (mostrarFormularioEntrar()) {
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <form [formGroup]="formGroup" (ngSubmit)="entrar()">
+        <div class="mb-3">
+          <label for="inputNome" class="form-label">
+            Bem vindo ao chat consolelog.com.br
+          </label>
+          <input
+            autofocus
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            id="inputNome"
+            placeholder="Digite seu nome"
+            formControlName="nome" />
+        </div>
+        <button
+          [disabled]="formGroup.invalid"
+          type="submit"
+          class="btn btn-primary">
+          Entrar
+        </button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+} @else {
+<app-chat></app-chat>
+}
